@@ -4,7 +4,7 @@ public class Result<T> {
 
     private String msg;
 
-    private String Status_Code;
+    private String statusCode;
 
     private T result;
 
@@ -16,12 +16,12 @@ public class Result<T> {
         this.msg = msg;
     }
 
-    public String getStatus_Code() {
-        return Status_Code;
+    public String getStatusCode() {
+        return statusCode;
     }
 
-    public void setStatus_Code(String status_Code) {
-        Status_Code = status_Code;
+    public void setStatusCode(String statusCode) {
+        this.statusCode = statusCode;
     }
 
     public T getResult() {
