@@ -10,14 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.sz.twoOfGroup</groupId>
-    <artifactId>STS_eureka</artifactId>
+    <artifactId>STS_market</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>cn.sz.twoOfGroup</groupId>
-            <artifactId>STS_service_api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -25,9 +20,14 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
+
 
 </project>

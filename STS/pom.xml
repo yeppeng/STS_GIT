@@ -12,6 +12,9 @@
         <module>STS_common</module>
         <module>STS_service_api</module>
         <module>STS_eureka</module>
+        <module>STS_stock</module>
+        <module>STS_user</module>
+        <module>STS_market</module>
     </modules>
 
     <!--SpringBoot父工程-->

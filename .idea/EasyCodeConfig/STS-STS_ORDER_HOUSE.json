@@ -1,0 +1,61 @@
+{
+  "name" : "StsOrderHouse",
+  "preName" : "",
+  "comment" : null,
+  "templateGroupName" : "Default",
+  "fullColumn" : [ {
+    "name" : "houseId",
+    "comment" : "主键id",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailCode",
+    "comment" : "股票代码",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailName",
+    "comment" : "股票名称",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "houseCount",
+    "comment" : "当前持股",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "houseUsable",
+    "comment" : "可卖股数",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "houseMoney",
+    "comment" : "持仓成本",
+    "type" : "java.lang.Double",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "houseMarket",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "cn.sz.twoOfGroup",
+  "savePath" : "./STS/STS_common/src/main/java/cn/sz/twoOfGroup",
+  "saveModelName" : "STS_common"
+}

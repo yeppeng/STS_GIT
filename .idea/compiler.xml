@@ -8,9 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="STS_common" />
         <module name="STS_eureka" />
+        <module name="STS_market" />
         <module name="STS_service_api" />
+        <module name="STS_stock" />
+        <module name="STS_user" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="STS_buyStock" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

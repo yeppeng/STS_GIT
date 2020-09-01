@@ -1,0 +1,82 @@
+{
+  "name" : "StsOrderDetail",
+  "preName" : "",
+  "comment" : null,
+  "templateGroupName" : "Default",
+  "fullColumn" : [ {
+    "name" : "detailId",
+    "comment" : "订单详情编号",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "orderNum",
+    "comment" : "订单号",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailCode",
+    "comment" : "股票代码",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailName",
+    "comment" : "股票名称",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailPrice",
+    "comment" : "股票当前价格",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailCount",
+    "comment" : "股票买（卖）入量",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailMoney",
+    "comment" : "买入（卖出）金额",
+    "type" : "java.lang.Double",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailRealmoney",
+    "comment" : "最终交易金额（单只股）",
+    "type" : "java.lang.Double",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailType",
+    "comment" : "订单类型(买，卖)",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "detailStatus",
+    "comment" : "订单状态（成交，撤，废，是否正在交易）",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "cn.sz.twoOfGroup",
+  "savePath" : "./STS/STS_common/src/main/java/cn/sz/twoOfGroup",
+  "saveModelName" : "STS_common"
+}
