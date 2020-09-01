@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sz.twoOfGroup.dao.StsUserDao">
+
+    <resultMap type="cn.sz.twoOfGroup.entity.StsUser" id="StsUserMap">
+        <result property="userId" column="USER_ID" jdbcType="INTEGER"/>
+        <result property="userPhone" column="USER_PHONE" jdbcType="VARCHAR"/>
+        <result property="userPwd" column="USER_PWD" jdbcType="VARCHAR"/>
+        <result property="userBalance" column="USER_BALANCE" jdbcType="NUMERIC"/>
+        <result property="userMoney" column="USER_MONEY" jdbcType="NUMERIC"/>
+        <result property="userTrpwd" column="USER_TRPWD" jdbcType="VARCHAR"/>
+        <result property="userAccount" column="USER_ACCOUNT" jdbcType="VARCHAR"/>
+        <result property="userType" column="USER_TYPE" jdbcType="INTEGER"/>
+        <result property="userEmail" column="USER_EMAIL" jdbcType="VARCHAR"/>
+        <result property="userMarry" column="USER_MARRY" jdbcType="VARCHAR"/>
+        <result property="userBank" column="USER_BANK" jdbcType="VARCHAR"/>
+        <result property="userBankbanlance" column="USER_BANKBANLANCE" jdbcType="NUMERIC"/>
+        <result property="userCompany" column="USER_COMPANY" jdbcType="VARCHAR"/>
+        <result property="userCard" column="USER_CARD" jdbcType="VARCHAR"/>
+        <result property="userSchool" column="USER_SCHOOL" jdbcType="VARCHAR"/>
+        <result property="userIncome" column="USER_INCOME" jdbcType="NUMERIC"/>
+        <result property="userWork" column="USER_WORK" jdbcType="VARCHAR"/>
+        <result property="userEducation" column="USER_EDUCATION" jdbcType="INTEGER"/>
+        <result property="userJob" column="USER_JOB" jdbcType="VARCHAR"/>
+        <result property="userWorkspace" column="USER_WORKSPACE" jdbcType="VARCHAR"/>
+        <result property="userProvince" column="USER_PROVINCE" jdbcType="VARCHAR"/>
+        <result property="userCity" column="USER_CITY" jdbcType="VARCHAR"/>
+        <result property="userDistrict" column="USER_DISTRICT" jdbcType="VARCHAR"/>
+        <result property="userAddress" column="USER_ADDRESS" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StsUserMap">
+        select USER_ID,
+               USER_PHONE,
+               USER_PWD,
+               USER_BALANCE,
+               USER_MONEY,
+               USER_TRPWD,
+               USER_ACCOUNT,
+               USER_TYPE,
+               USER_EMAIL,
+               USER_MARRY,
+               USER_BANK,
+               USER_BANKBANLANCE,
+               USER_COMPANY,
+               USER_CARD,
+               USER_SCHOOL,
+               USER_INCOME,
+               USER_WORK,
+               USER_EDUCATION,
+               USER_JOB,
+               USER_WORKSPACE,
+               USER_PROVINCE,
+               USER_CITY,
+               USER_DISTRICT,
+               USER_ADDRESS
+        from STS.STS_USER
+        where USER_ID = #{userId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="findAll" resultMap="StsUserMap">
+        select USER_ID,
+               USER_PHONE,
+               USER_PWD,
+               USER_BALANCE,
+               USER_MONEY,
+               USER_TRPWD,
+               USER_ACCOUNT,
+               USER_TYPE,
+               USER_EMAIL,
+               USER_MARRY,
+               USER_BANK,
+               USER_BANKBANLANCE,
+               USER_COMPANY,
+               USER_CARD,
+               USER_SCHOOL,
+               USER_INCOME,
+               USER_WORK,
+               USER_EDUCATION,
+               USER_JOB,
+               USER_WORKSPACE,
+               USER_PROVINCE,
+               USER_CITY,
+               USER_DISTRICT,
+               USER_ADDRESS
+        from STS.STS_USER
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="StsUserMap">
+        select
+        USER_ID, USER_PHONE, USER_PWD, USER_BALANCE, USER_MONEY, USER_TRPWD, USER_ACCOUNT, USER_TYPE, USER_EMAIL,
+        USER_MARRY, USER_BANK, USER_BANKBANLANCE, USER_COMPANY, USER_CARD, USER_SCHOOL, USER_INCOME, USER_WORK,
+        USER_EDUCATION, USER_JOB, USER_WORKSPACE, USER_PROVINCE, USER_CITY, USER_DISTRICT, USER_ADDRESS
+        from STS.STS_USER
+        <where>
+            <if test="userId != null">
+                and USER_ID = #{userId}
+            </if>
+            <if test="userPhone != null and userPhone != ''">
+                and USER_PHONE = #{userPhone}
+            </if>
+            <if test="userPwd != null and userPwd != ''">
+                and USER_PWD = #{userPwd}
+            </if>
+            <if test="userBalance != null">
+                and USER_BALANCE = #{userBalance}
+            </if>
+            <if test="userMoney != null">
+                and USER_MONEY = #{userMoney}
+            </if>
+            <if test="userTrpwd != null and userTrpwd != ''">
+                and USER_TRPWD = #{userTrpwd}
+            </if>
+            <if test="userAccount != null and userAccount != ''">
+                and USER_ACCOUNT = #{userAccount}
+            </if>
+            <if test="userType != null">
+                and USER_TYPE = #{userType}
+            </if>
+            <if test="userEmail != null and userEmail != ''">
+                and USER_EMAIL = #{userEmail}
+            </if>
+            <if test="userMarry != null and userMarry != ''">
+                and USER_MARRY = #{userMarry}
+            </if>
+            <if test="userBank != null and userBank != ''">
+                and USER_BANK = #{userBank}
+            </if>
+            <if test="userBankbanlance != null">
+                and USER_BANKBANLANCE = #{userBankbanlance}
+            </if>
+            <if test="userCompany != null and userCompany != ''">
+                and USER_COMPANY = #{userCompany}
+            </if>
+            <if test="userCard != null and userCard != ''">
+                and USER_CARD = #{userCard}
+            </if>
+            <if test="userSchool != null and userSchool != ''">
+                and USER_SCHOOL = #{userSchool}
+            </if>
+            <if test="userIncome != null">
+                and USER_INCOME = #{userIncome}
+            </if>
+            <if test="userWork != null and userWork != ''">
+                and USER_WORK = #{userWork}
+            </if>
+            <if test="userEducation != null">
+                and USER_EDUCATION = #{userEducation}
+            </if>
+            <if test="userJob != null and userJob != ''">
+                and USER_JOB = #{userJob}
+            </if>
+            <if test="userWorkspace != null and userWorkspace != ''">
+                and USER_WORKSPACE = #{userWorkspace}
+            </if>
+            <if test="userProvince != null and userProvince != ''">
+                and USER_PROVINCE = #{userProvince}
+            </if>
+            <if test="userCity != null and userCity != ''">
+                and USER_CITY = #{userCity}
+            </if>
+            <if test="userDistrict != null and userDistrict != ''">
+                and USER_DISTRICT = #{userDistrict}
+            </if>
+            <if test="userAddress != null and userAddress != ''">
+                and USER_ADDRESS = #{userAddress}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
+        insert into STS.STS_USER (USER_PHONE,
+                                  USER_PWD,
+                                  USER_BALANCE,
+                                  USER_MONEY,
+                                  USER_TRPWD,
+                                  USER_ACCOUNT,
+                                  USER_TYPE,
+                                  USER_EMAIL,
+                                  USER_MARRY,
+                                  USER_BANK,
+                                  USER_BANKBANLANCE,
+                                  USER_COMPANY,
+                                  USER_CARD,
+                                  USER_SCHOOL,
+                                  USER_INCOME,
+                                  USER_WORK,
+                                  USER_EDUCATION,
+                                  USER_JOB,
+                                  USER_WORKSPACE,
+                                  USER_PROVINCE,
+                                  USER_CITY,
+                                  USER_DISTRICT,
+                                  USER_ADDRESS)
+        values (#{userPhone},
+                #{userPwd},
+                #{userBalance},
+                #{userMoney},
+                #{userTrpwd},
+                #{userAccount},
+                #{userType},
+                #{userEmail},
+                #{userMarry},
+                #{userBank},
+                #{userBankbanlance},
+                #{userCompany},
+                #{userCard},
+                #{userSchool},
+                #{userIncome},
+                #{userWork},
+                #{userEducation},
+                #{userJob},
+                #{userWorkspace},
+                #{userProvince},
+                #{userCity},
+                #{userDistrict},
+                #{userAddress})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update STS.STS_USER
+        <set>
+            <if test="userPhone != null and userPhone != ''">
+                USER_PHONE = #{userPhone},
+            </if>
+            <if test="userPwd != null and userPwd != ''">
+                USER_PWD = #{userPwd},
+            </if>
+            <if test="userBalance != null">
+                USER_BALANCE = #{userBalance},
+            </if>
+            <if test="userMoney != null">
+                USER_MONEY = #{userMoney},
+            </if>
+            <if test="userTrpwd != null and userTrpwd != ''">
+                USER_TRPWD = #{userTrpwd},
+            </if>
+            <if test="userAccount != null and userAccount != ''">
+                USER_ACCOUNT = #{userAccount},
+            </if>
+            <if test="userType != null">
+                USER_TYPE = #{userType},
+            </if>
+            <if test="userEmail != null and userEmail != ''">
+                USER_EMAIL = #{userEmail},
+            </if>
+            <if test="userMarry != null and userMarry != ''">
+                USER_MARRY = #{userMarry},
+            </if>
+            <if test="userBank != null and userBank != ''">
+                USER_BANK = #{userBank},
+            </if>
+            <if test="userBankbanlance != null">
+                USER_BANKBANLANCE = #{userBankbanlance},
+            </if>
+            <if test="userCompany != null and userCompany != ''">
+                USER_COMPANY = #{userCompany},
+            </if>
+            <if test="userCard != null and userCard != ''">
+                USER_CARD = #{userCard},
+            </if>
+            <if test="userSchool != null and userSchool != ''">
+                USER_SCHOOL = #{userSchool},
+            </if>
+            <if test="userIncome != null">
+                USER_INCOME = #{userIncome},
+            </if>
+            <if test="userWork != null and userWork != ''">
+                USER_WORK = #{userWork},
+            </if>
+            <if test="userEducation != null">
+                USER_EDUCATION = #{userEducation},
+            </if>
+            <if test="userJob != null and userJob != ''">
+                USER_JOB = #{userJob},
+            </if>
+            <if test="userWorkspace != null and userWorkspace != ''">
+                USER_WORKSPACE = #{userWorkspace},
+            </if>
+            <if test="userProvince != null and userProvince != ''">
+                USER_PROVINCE = #{userProvince},
+            </if>
+            <if test="userCity != null and userCity != ''">
+                USER_CITY = #{userCity},
+            </if>
+            <if test="userDistrict != null and userDistrict != ''">
+                USER_DISTRICT = #{userDistrict},
+            </if>
+            <if test="userAddress != null and userAddress != ''">
+                USER_ADDRESS = #{userAddress},
+            </if>
+        </set>
+        where USER_ID = #{userId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from STS.STS_USER
+        where USER_ID = #{userId}
+    </delete>
+
+</mapper>

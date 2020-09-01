@@ -28,6 +28,6 @@
   "pkColumn" : null,
   "otherColumn" : null,
   "savePackageName" : "cn.sz.twoOfGroup",
-  "savePath" : "./STS/STS_common/src/main/java/cn/sz/twoOfGroup",
-  "saveModelName" : "STS_common"
+  "savePath" : "./STS/STS_user/src/main/java/cn/sz/twoOfGroup",
+  "saveModelName" : "STS_user"
 }

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sz.twoOfGroup.dao.StsMarketDao">
+
+    <resultMap type="cn.sz.twoOfGroup.entity.StsMarket" id="StsMarketMap">
+        <result property="marketId" column="MARKET_ID" jdbcType="INTEGER"/>
+        <result property="detailCode" column="DETAIL_CODE" jdbcType="VARCHAR"/>
+        <result property="detailName" column="DETAIL_NAME" jdbcType="VARCHAR"/>
+        <result property="marketMaprice" column="MARKET_MAPRICE" jdbcType="NUMERIC"/>
+        <result property="marketDzf" column="MARKET_DZF" jdbcType="NUMERIC"/>
+        <result property="marketZd" column="MARKET_ZD" jdbcType="NUMERIC"/>
+        <result property="marketZs" column="MARKET_ZS" jdbcType="NUMERIC"/>
+        <result property="marketHs" column="MARKET_HS" jdbcType="NUMERIC"/>
+        <result property="marketLb" column="MARKET_LB" jdbcType="NUMERIC"/>
+        <result property="marketZf" column="MARKET_ZF" jdbcType="NUMERIC"/>
+        <result property="marketCjl" column="MARKET_CJL" jdbcType="NUMERIC"/>
+        <result property="marketCje" column="MARKET_CJE" jdbcType="NUMERIC"/>
+        <result property="marketLtg" column="MARKET_LTG" jdbcType="NUMERIC"/>
+        <result property="marketLtsz" column="MARKET_LTSZ" jdbcType="NUMERIC"/>
+        <result property="marketSyl" column="MARKET_SYL" jdbcType="NUMERIC"/>
+        <result property="marketStart" column="MARKET_START" jdbcType="NUMERIC"/>
+        <result property="marketHeight" column="MARKET_HEIGHT" jdbcType="NUMERIC"/>
+        <result property="marketLow" column="MARKET_LOW" jdbcType="NUMERIC"/>
+        <result property="markerZsj" column="MARKER_ZSJ" jdbcType="NUMERIC"/>
+        <result property="marketZrs" column="MARKET_ZRS" jdbcType="NUMERIC"/>
+        <result property="marketSjl" column="MARKET_SJL" jdbcType="NUMERIC"/>
+        <result property="marketSfyl" column="MARKET_SFYL" jdbcType="INTEGER"/>
+        <result property="marketTgtq" column="MARKET_TGTQ" jdbcType="INTEGER"/>
+        <result property="marketStats" column="MARKET_STATS" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StsMarketMap" >
+        select MARKET_ID,
+               DETAIL_CODE,
+               DETAIL_NAME,
+               MARKET_MAPRICE,
+               MARKET_DZF,
+               MARKET_ZD,
+               MARKET_ZS,
+               MARKET_HS,
+               MARKET_LB,
+               MARKET_ZF,
+               MARKET_CJL,
+               MARKET_CJE,
+               MARKET_LTG,
+               MARKET_LTSZ,
+               MARKET_SYL,
+               MARKET_START,
+               MARKET_HEIGHT,
+               MARKET_LOW,
+               MARKER_ZSJ,
+               MARKET_ZRS,
+               MARKET_SJL,
+               MARKET_SFYL,
+               MARKET_TGTQ,
+               MARKET_STATS
+        from STS.STS_MARKET
+        where MARKET_ID= #{marketId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="findAll" resultMap="StsMarketMap">
+        select MARKET_ID,
+               DETAIL_CODE,
+               DETAIL_NAME,
+               MARKET_MAPRICE,
+               MARKET_DZF,
+               MARKET_ZD,
+               MARKET_ZS,
+               MARKET_HS,
+               MARKET_LB,
+               MARKET_ZF,
+               MARKET_CJL,
+               MARKET_CJE,
+               MARKET_LTG,
+               MARKET_LTSZ,
+               MARKET_SYL,
+               MARKET_START,
+               MARKET_HEIGHT,
+               MARKET_LOW,
+               MARKER_ZSJ,
+               MARKET_ZRS,
+               MARKET_SJL,
+               MARKET_SFYL,
+               MARKET_TGTQ,
+               MARKET_STATS
+        from STS.STS_MARKET
+
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="StsMarketMap">
+        select
+        MARKET_ID, DETAIL_CODE, DETAIL_NAME, MARKET_MAPRICE, MARKET_DZF, MARKET_ZD, MARKET_ZS, MARKET_HS, MARKET_LB,
+        MARKET_ZF, MARKET_CJL, MARKET_CJE, MARKET_LTG, MARKET_LTSZ, MARKET_SYL, MARKET_START, MARKET_HEIGHT, MARKET_LOW,
+        MARKER_ZSJ, MARKET_ZRS, MARKET_SJL, MARKET_SFYL, MARKET_TGTQ, MARKET_STATS
+        from STS.STS_MARKET
+        <where>
+            <if test="marketId != null">
+                and MARKET_ID = #{marketId}
+            </if>
+            <if test="detailCode != null and detailCode != ''">
+                and DETAIL_CODE = #{detailCode}
+            </if>
+            <if test="detailName != null and detailName != ''">
+                and DETAIL_NAME = #{detailName}
+            </if>
+            <if test="marketMaprice != null">
+                and MARKET_MAPRICE = #{marketMaprice}
+            </if>
+            <if test="marketDzf != null">
+                and MARKET_DZF = #{marketDzf}
+            </if>
+            <if test="marketZd != null">
+                and MARKET_ZD = #{marketZd}
+            </if>
+            <if test="marketZs != null">
+                and MARKET_ZS = #{marketZs}
+            </if>
+            <if test="marketHs != null">
+                and MARKET_HS = #{marketHs}
+            </if>
+            <if test="marketLb != null">
+                and MARKET_LB = #{marketLb}
+            </if>
+            <if test="marketZf != null">
+                and MARKET_ZF = #{marketZf}
+            </if>
+            <if test="marketCjl != null">
+                and MARKET_CJL = #{marketCjl}
+            </if>
+            <if test="marketCje != null">
+                and MARKET_CJE = #{marketCje}
+            </if>
+            <if test="marketLtg != null">
+                and MARKET_LTG = #{marketLtg}
+            </if>
+            <if test="marketLtsz != null">
+                and MARKET_LTSZ = #{marketLtsz}
+            </if>
+            <if test="marketSyl != null">
+                and MARKET_SYL = #{marketSyl}
+            </if>
+            <if test="marketStart != null">
+                and MARKET_START = #{marketStart}
+            </if>
+            <if test="marketHeight != null">
+                and MARKET_HEIGHT = #{marketHeight}
+            </if>
+            <if test="marketLow != null">
+                and MARKET_LOW = #{marketLow}
+            </if>
+            <if test="markerZsj != null">
+                and MARKER_ZSJ = #{markerZsj}
+            </if>
+            <if test="marketZrs != null">
+                and MARKET_ZRS = #{marketZrs}
+            </if>
+            <if test="marketSjl != null">
+                and MARKET_SJL = #{marketSjl}
+            </if>
+            <if test="marketSfyl != null">
+                and MARKET_SFYL = #{marketSfyl}
+            </if>
+            <if test="marketTgtq != null">
+                and MARKET_TGTQ = #{marketTgtq}
+            </if>
+            <if test="marketStats != null">
+                and MARKET_STATS = #{marketStats}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="marketId" useGeneratedKeys="true">
+        insert into STS.STS_MARKET (MARKET_ID,
+                                    DETAIL_CODE,
+                                    DETAIL_NAME,
+                                    MARKET_MAPRICE,
+                                    MARKET_DZF,
+                                    MARKET_ZD,
+                                    MARKET_ZS,
+                                    MARKET_HS,
+                                    MARKET_LB,
+                                    MARKET_ZF,
+                                    MARKET_CJL,
+                                    MARKET_CJE,
+                                    MARKET_LTG,
+                                    MARKET_LTSZ,
+                                    MARKET_SYL,
+                                    MARKET_START,
+                                    MARKET_HEIGHT,
+                                    MARKET_LOW,
+                                    MARKER_ZSJ,
+                                    MARKET_ZRS,
+                                    MARKET_SJL,
+                                    MARKET_SFYL,
+                                    MARKET_TGTQ,
+                                    MARKET_STATS)
+        values (#{marketId},
+                #{detailCode},
+                #{detailName},
+                #{marketMaprice},
+                #{marketDzf},
+                #{marketZd},
+                #{marketZs},
+                #{marketHs},
+                #{marketLb},
+                #{marketZf},
+                #{marketCjl},
+                #{marketCje},
+                #{marketLtg},
+                #{marketLtsz},
+                #{marketSyl},
+                #{marketStart},
+                #{marketHeight},
+                #{marketLow},
+                #{markerZsj},
+                #{marketZrs},
+                #{marketSjl},
+                #{marketSfyl},
+                #{marketTgtq},
+                #{marketStats})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update STS.STS_MARKET
+        <set>
+            <if test="detailCode != null and detailCode != ''">
+                DETAIL_CODE = #{detailCode},
+            </if>
+            <if test="detailName != null and detailName != ''">
+                DETAIL_NAME = #{detailName},
+            </if>
+            <if test="marketMaprice != null">
+                MARKET_MAPRICE = #{marketMaprice},
+            </if>
+            <if test="marketDzf != null">
+                MARKET_DZF = #{marketDzf},
+            </if>
+            <if test="marketZd != null">
+                MARKET_ZD = #{marketZd},
+            </if>
+            <if test="marketZs != null">
+                MARKET_ZS = #{marketZs},
+            </if>
+            <if test="marketHs != null">
+                MARKET_HS = #{marketHs},
+            </if>
+            <if test="marketLb != null">
+                MARKET_LB = #{marketLb},
+            </if>
+            <if test="marketZf != null">
+                MARKET_ZF = #{marketZf},
+            </if>
+            <if test="marketCjl != null">
+                MARKET_CJL = #{marketCjl},
+            </if>
+            <if test="marketCje != null">
+                MARKET_CJE = #{marketCje},
+            </if>
+            <if test="marketLtg != null">
+                MARKET_LTG = #{marketLtg},
+            </if>
+            <if test="marketLtsz != null">
+                MARKET_LTSZ = #{marketLtsz},
+            </if>
+            <if test="marketSyl != null">
+                MARKET_SYL = #{marketSyl},
+            </if>
+            <if test="marketStart != null">
+                MARKET_START = #{marketStart},
+            </if>
+            <if test="marketHeight != null">
+                MARKET_HEIGHT = #{marketHeight},
+            </if>
+            <if test="marketLow != null">
+                MARKET_LOW = #{marketLow},
+            </if>
+            <if test="markerZsj != null">
+                MARKER_ZSJ = #{markerZsj},
+            </if>
+            <if test="marketZrs != null">
+                MARKET_ZRS = #{marketZrs},
+            </if>
+            <if test="marketSjl != null">
+                MARKET_SJL = #{marketSjl},
+            </if>
+            <if test="marketSfyl != null">
+                MARKET_SFYL = #{marketSfyl},
+            </if>
+            <if test="marketTgtq != null">
+                MARKET_TGTQ = #{marketTgtq},
+            </if>
+            <if test="marketStats != null">
+                MARKET_STATS = #{marketStats},
+            </if>
+        </set>
+        where MARKET_ID = #{marketId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from STS.STS_MARKET
+        where MARKET_ID = #{marketId}
+    </delete>
+
+</mapper>

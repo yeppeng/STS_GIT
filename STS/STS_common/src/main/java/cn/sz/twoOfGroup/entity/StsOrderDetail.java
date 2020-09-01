@@ -29,7 +29,7 @@ public class StsOrderDetail implements Serializable {
     /**
      * 股票当前价格
      */
-    private Object detailPrice;
+    private Double detailPrice;
     /**
      * 股票买（卖）入量
      */
@@ -84,11 +84,11 @@ public class StsOrderDetail implements Serializable {
         this.detailName = detailName;
     }
 
-    public Object getDetailPrice() {
+    public Double getDetailPrice() {
         return detailPrice;
     }
 
-    public void setDetailPrice(Object detailPrice) {
+    public void setDetailPrice(Double detailPrice) {
         this.detailPrice = detailPrice;
     }
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sz.twoOfGroup.dao.StsAccuserDao">
+
+    <resultMap type="cn.sz.twoOfGroup.entity.StsAccuser" id="StsAccuserMap">
+        <result property="accuserId" column="ACCUSER_ID" jdbcType="INTEGER"/>
+        <result property="userPhone" column="USER_PHONE" jdbcType="VARCHAR"/>
+        <result property="userPwd" column="USER_PWD" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StsAccuserMap">
+        select ACCUSER_ID, USER_PHONE, USER_PWD
+        from STS.STS_ACCUSER
+        where ACCUSER_ID = #{accuserId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="findAll" resultMap="StsAccuserMap">
+        select ACCUSER_ID, USER_PHONE, USER_PWD
+        from STS.STS_ACCUSER
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="StsAccuserMap">
+        select
+        ACCUSER_ID, USER_PHONE, USER_PWD
+        from STS.STS_ACCUSER
+        <where>
+            <if test="accuserId != null">
+                and ACCUSER_ID = #{accuserId}
+            </if>
+            <if test="userPhone != null and userPhone != ''">
+                and USER_PHONE = #{userPhone}
+            </if>
+            <if test="userPwd != null and userPwd != ''">
+                and USER_PWD = #{userPwd}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="accuserId" useGeneratedKeys="true">
+        insert into STS.STS_ACCUSER (USER_PHONE, USER_PWD)
+        values (#{userPhone}, #{userPwd})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update STS.STS_ACCUSER
+        <set>
+            <if test="userPhone != null and userPhone != ''">
+                USER_PHONE = #{userPhone},
+            </if>
+            <if test="userPwd != null and userPwd != ''">
+                USER_PWD = #{userPwd},
+            </if>
+        </set>
+        where ACCUSER_ID = #{accuserId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from STS.STS_ACCUSER
+        where ACCUSER_ID = #{accuserId}
+    </delete>
+
+</mapper>
